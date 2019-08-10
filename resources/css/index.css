@@ -1,0 +1,9 @@
+.nav-wrapper .brand-logo {
+    margin-left: 1vw !important;
+}
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}

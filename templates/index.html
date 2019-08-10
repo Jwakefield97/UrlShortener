@@ -13,7 +13,65 @@
 		<script src="/resources/js/index.js"></script>
 	</head>
 	<body>
-		<h1>Some Header</h1>
+		<nav class="grey lighten-4 hoverable">
+			<div class="nav-wrapper">
+					<a href="/" class="brand-logo black-text truncate">URLShortener</a>
+					<a href="#" data-target="sideBar" class="sidenav-trigger black-text"><i class="material-icons menu">dehaze</i></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="/" class="black-text">Home</a></li>
+					<li><a href="/search" class="black-text">Search</a></li>
+				</ul>
+			</div>
+		</nav>
+		<ul class="sidenav" id="sideBar">
+			<li><a href="/" class="black-text">Home</a></li>
+			<li><a href="/search" class="black-text">Search</a></li>
+		</ul>
+		<div class="container">
+            <div class="row">
+				<div class="col s8 offset-s2">
+					<h3>Shorten URL</h3>
+					<div class="card hoverable">
+						<div class="card-content">
+							<div class="row">
+								<div id="formLoader" class="progress hide">
+									<div class="indeterminate"></div>
+								</div>
+								<div class="input-field col s12">
+									<i class="material-icons prefix">create</i>
+									<input id="newURL" type="text">
+									<label for="newURL">URL</label>
+								</div>
+							</div>
+							<div class="card-action right-align">
+								<button class="btn waves-effect waves-light " type="button" id="submitNewUrl" name="action">Shorten
+									<i class="material-icons right">send</i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s8 offset-s2">
+					<ul class="collapsible hide" id="newUrlLinkWrapper">
+						<li>
+							<div class="collapsible-header">
+								New URL:&nbsp;&nbsp;
+								<a href="#" class="collection-item" id="newUrlLink"></a>
+								<span class="badge"><i class="material-icons">keyboard_arrow_down</i></span>
+								
+							</div>
+							<div class="collapsible-body">
+								<p>
+									Click or distribute the shortened link to redirect back to the original link.
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 		<script>
 			M.AutoInit();
 		 </script>

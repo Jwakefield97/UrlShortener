@@ -15,6 +15,7 @@ func hash(s string) string {
 }
 
 func main() {
+	shortenLink := "http://localhost/h/"
 	urls := map[string]string{}
 	urls["1"] = "https://www.google.com/search?q=images&rlz=1C1CHBF_enUS796US796&tbm=isch&source=iu&ictx=1&fir=8c_UAo3gH_220M%253A%252CShwNVOdFBcmkxM%252C_&vet=1&usg=AI4_-kQpJbM15TX5VhVDvz1rgddeX4UTow&sa=X&ved=2ahUKEwj8sIK0lfnjAhUWCs0KHU6MBUsQ9QEwAXoECAYQBg#imgrc=8c_UAo3gH_220M:"
 	r := gin.Default()
@@ -23,6 +24,10 @@ func main() {
 
 	r.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.html", nil)
+	})
+
+	r.GET("/search", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "search.html", nil)
 	})
 
 	//return the map of currently mapped hashs to urls
@@ -36,7 +41,7 @@ func main() {
 		urlHash := hash(newURL)
 		urls[urlHash] = newURL
 		c.JSON(200, gin.H{
-			"hash": urlHash,
+			"url": shortenLink + urlHash,
 		})
 	})
 

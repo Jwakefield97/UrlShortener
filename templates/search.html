@@ -27,7 +27,27 @@
 			<li><a href="/" class="black-text">Home</a></li>
 			<li><a href="/search" class="black-text">Search</a></li>
 		</ul>
+		<div class="container">
+			<div class="row">
+				<div class="col s12 ">
+					<div class="row">
+						<div class="input-field col s12">
+						<i class="material-icons prefix">textsms</i>
+						<input type="text" id="searchInput" class="autocomplete">
+						<label for="autocomplete-input">Search for shortened URLs</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12 ">
+					<ul class="collection" id="searchResults">
+					</ul>
+				</div>
+			</div>
+		</div>
 		<script>
+			const SHORTENED_LINK_BASE = "{{.shortenedLink}}";
 			M.AutoInit();
 		 </script>
 	</body>

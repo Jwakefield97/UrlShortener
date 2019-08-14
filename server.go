@@ -27,7 +27,9 @@ func main() {
 	})
 
 	r.GET("/search", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "search.html", nil)
+		c.HTML(http.StatusOK, "search.html", gin.H{
+			"shortenedLink": shortenLink,
+		})
 	})
 
 	//return the map of currently mapped hashs to urls

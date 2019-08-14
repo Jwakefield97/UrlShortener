@@ -17,7 +17,6 @@ func hash(s string) string {
 func main() {
 	shortenLink := "http://localhost/h/"
 	urls := map[string]string{}
-	urls["1"] = "https://www.google.com/search?q=images&rlz=1C1CHBF_enUS796US796&tbm=isch&source=iu&ictx=1&fir=8c_UAo3gH_220M%253A%252CShwNVOdFBcmkxM%252C_&vet=1&usg=AI4_-kQpJbM15TX5VhVDvz1rgddeX4UTow&sa=X&ved=2ahUKEwj8sIK0lfnjAhUWCs0KHU6MBUsQ9QEwAXoECAYQBg#imgrc=8c_UAo3gH_220M:"
 	r := gin.Default()
 	r.LoadHTMLGlob("templates/*")
 	r.StaticFS("/resources", http.Dir("resources"))
